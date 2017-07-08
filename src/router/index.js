@@ -1,15 +1,25 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Hello from '@/components/Hello'
+import Add from '@/components/Add';
+import Detail from '@/components/Detail';
+import List from '@/components/List';
 
 Vue.use(Router);
 
 export default new Router({
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'Hello',
-    //   component: Hello
-    // }
+    {
+      path: '/add',
+      component: Add
+    },
+    {
+      path: '/detail/:id',
+      name:'detail',
+      component: Detail
+    },
+    {
+      path: '/list',
+      component: List
+    }
   ]
 })
