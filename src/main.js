@@ -4,6 +4,9 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import 'bootstrap/dist/css/bootstrap.css';
+//使用VueResource模块，每个this上都可以使用$http的属性
+import VueResource from 'vue-resource';
+Vue.use(VueResource);
 
 Vue.config.productionTip = false;
 

@@ -10,6 +10,7 @@
          </div>
          <div class="panel-footer">
            价格:{{book.bookPrice | currency('￥')}}
+           <router-link :to="{name:'detail',params:{id:book.id}}">进入详情</router-link>
          </div>
        </div>
      </div>
@@ -28,11 +29,14 @@
            return params1+input;
        }
     },
+    created(){
+        //在config目录中的index.js中的proxyTable中 配置代理表
+       this.$http.get('/book').then((res)=>{
+           this.books=res.body;
+       })
+    },
     data(){
-      return {books:[
-        {bookName:'武侠小说',bookPrice:30,bookCover:'https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2073765524,865271981&fm=58',id:1},
-        {bookName:'言情小说',bookPrice:40,bookCover:'https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=248685597,3438291033&fm=58',id:2},
-      ]}
+      return {books:[]}
     },
     components:{},
     methods:{}
